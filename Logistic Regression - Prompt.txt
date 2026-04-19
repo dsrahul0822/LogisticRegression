@@ -1,0 +1,161 @@
+You are a senior Python developer, data scientist, and UI/UX expert.
+
+I want you to build a COMPLETE, production-ready Streamlit application for a Banking Loan Prediction System using Logistic Regression.
+
+Follow ALL instructions carefully and generate clean, modular, well-commented, industry-level code.
+
+-----------------------------------
+📌 DATA UNDERSTANDING & PREPARATION
+-----------------------------------
+
+I have TWO datasets:
+1. Train dataset → target column name = "loan_status"
+2. Test dataset → target column name = "outcome"
+
+👉 Step 1: Standardize column names
+- Rename "loan_status" → "outcome" in train dataset
+
+👉 Step 2: Combine both datasets
+- Use pandas to concatenate both datasets into ONE unified dataframe
+
+👉 Step 3: Data Cleaning
+- Handle missing values using:
+  - Categorical columns → fill with MODE using fillna()
+  - Numerical columns → fill with MEDIAN using fillna()
+
+👉 Step 4: Special Transformation
+- Column: "dependence"
+  - Replace "3+" → 3
+  - Convert column to numeric
+
+👉 Step 5: Encoding
+- Apply One-Hot Encoding using pd.get_dummies()
+- drop_first = True
+- Ensure all encoded columns are integer type
+
+-----------------------------------
+📌 STREAMLIT APPLICATION STRUCTURE
+-----------------------------------
+
+Create a MULTI-PAGE Streamlit app with a professional UI.
+
+Use sidebar navigation with the following pages:
+
+-----------------------------------
+🔹 PAGE 1: DATA UPLOAD & OVERVIEW
+-----------------------------------
+- Upload train and test CSV files
+- Display:
+  - Number of rows and columns
+  - Column names
+  - Data types
+  - Missing values summary
+  - Basic statistics (describe)
+
+-----------------------------------
+🔹 PAGE 2: DATA PREPROCESSING
+-----------------------------------
+- Buttons / options:
+  - "Handle Missing Values"
+  - "Apply One-Hot Encoding"
+- Show before/after preview of data
+- Show transformation logs
+
+-----------------------------------
+🔹 PAGE 3: TRAIN-TEST SPLIT & MODEL TRAINING
+-----------------------------------
+- Split dataset using train_test_split
+- Use LogisticRegression from sklearn
+- Train model on training data
+
+- Display:
+  - Model coefficients
+  - Feature importance explanation
+  - Intercept
+
+-----------------------------------
+🔹 PAGE 4: MODEL EVALUATION
+-----------------------------------
+Use test dataset to evaluate model:
+- Accuracy Score
+- Confusion Matrix
+- Precision
+- Recall
+- F1 Score
+
+- Display confusion matrix visually
+- Add interpretation of results
+
+-----------------------------------
+🔹 PAGE 5: BULK PREDICTION (FILE UPLOAD)
+-----------------------------------
+- Upload new customer CSV
+- Apply SAME preprocessing pipeline
+- Predict outcomes
+
+- Output:
+  - Predicted Loan Status
+  - Probability of Approval
+
+- Add Download Button for results CSV
+
+-----------------------------------
+🔹 PAGE 6: MANUAL PREDICTION
+-----------------------------------
+- Create input form for all features
+- On clicking "Predict":
+
+👉 Show:
+- Probability of Loan Approval
+- Probability of Rejection
+
+👉 UI Requirement:
+- If approved:
+  - Show GREEN color with percentage
+- If rejected:
+  - Show RED color with percentage
+
+-----------------------------------
+🎨 UI/UX REQUIREMENTS
+-----------------------------------
+- Use custom CSS styling
+- Clean dashboard layout
+- Consistent color theme:
+  - Primary: #00E676 (Green)
+  - Accent: #FF2D95 (Pink)
+  - Background: Dark/Light professional theme
+- Use cards, containers, and columns
+- Add headers and icons for each section
+
+-----------------------------------
+⚙️ TECH STACK
+-----------------------------------
+- Frontend: Streamlit
+- Backend: Scikit-learn
+- Libraries:
+  - pandas
+  - numpy
+  - sklearn
+  - matplotlib / seaborn (for visuals)
+
+-----------------------------------
+📌 ADDITIONAL REQUIREMENTS
+-----------------------------------
+- Modular code (functions for each task)
+- Use pipeline-like structure for preprocessing
+- Ensure reproducibility
+- Add comments explaining logic
+- Handle errors gracefully
+
+-----------------------------------
+📌 OUTPUT EXPECTATION
+-----------------------------------
+Provide:
+1. Complete Streamlit code (single file or structured modules)
+2. Clear instructions to run the app
+3. requirements.txt
+4. Explanation of key parts (especially coefficients interpretation)
+
+-----------------------------------
+
+Make the application PROFESSIONAL, CLIENT-READY, and TEACHING-FRIENDLY.
